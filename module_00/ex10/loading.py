@@ -6,7 +6,7 @@
 #    By: alvgomez <alvgomez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 12:39:07 by alvgomez          #+#    #+#              #
-#    Updated: 2023/03/20 16:29:20 by alvgomez         ###   ########.fr        #
+#    Updated: 2023/03/20 16:37:35 by alvgomez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ def ft_progress(listy):
 	i = 0
 	while i <= numbers[n - 1]:
 		level = int(numbers[i]*20/n)
-		print (f" ETA: {eta:5.2f}s [{int(numbers[i]*100/n):3d}%] {bar[level]} {numbers[i]:4d}/{n:4d} | elapsed time {time.time() - t_start:5.2f}s", end= "\r")
+		print(f" ETA: {eta:5.2f}s [{int(numbers[i]*100/n):3d}%] {bar[level]} {numbers[i]:4d}/{n:4d} | elapsed time {time.time() - t_start:5.2f}s", end= "\r")
 		yield numbers[i]
 		if i == 0:							
 			t = time.time() - t_start
