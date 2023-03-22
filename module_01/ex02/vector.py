@@ -6,7 +6,7 @@
 #    By: alvgomez <alvgomez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 18:12:02 by alvgomez          #+#    #+#              #
-#    Updated: 2023/03/21 20:03:32 by alvgomez         ###   ########.fr        #
+#    Updated: 2023/03/22 13:42:54 by alvgomez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,9 @@ class Vector:
     def __str__(self):
         return str(self.values)
     
+    def __repr__(self):
+        return str(self.values)
+    
     def __add__(self, other):
         if isinstance(other, float):
             vector = []
@@ -68,7 +71,7 @@ class Vector:
                     temp.append(a[0] + other)
                     vector.append(temp)
             return Vector(vector)
-        elif isinstance(other, list):
+        elif isinstance(other, Vector):
             if self.shape == other.shape:
                 vector = []
                 if self.shape[0] == 1:
@@ -104,7 +107,7 @@ class Vector:
                     temp.append(a[0] - other)
                     vector.append(temp)
             return Vector(vector)
-        elif isinstance(other, list):
+        elif isinstance(other, Vector):
             if self.shape == other.shape:
                 vector = []
                 if self.shape[0] == 1:
@@ -125,3 +128,37 @@ class Vector:
 
     def __rsub__(self, other):
         print("NotImplementedError: Subtraction of a scalar by a Vector is not defined here")
+
+    def __mul__(self, other):
+        if isinstance(other, float):
+            if self.shape[0] == 1:
+                for i in range(len(self.values[0])):
+                    self.values[0][i] *= other
+            else:
+                for i in range(len(self.values)):
+                    self.values[i][0] *= other
+            return self
+        elif isinstance(other, Vector):
+            print("NotImplementedError: Multiplication of Vectors is not defined here")
+        else:
+            print("Values must be Vectors or floats")
+        
+    def __rmul__(self, other):
+        return (self * other)
+    
+    def __truediv__(self, other):
+        if isinstance(other, float):
+            if self.shape[0] == 1:
+                for i in range(len(self.values[0])):
+                    self.values[0][i] /= other
+            else:
+                for i in range(len(self.values)):
+                    self.values[i][0] /= other
+            return self
+        elif isinstance(other, Vector):
+            print("NotImplementedError: Division of Vectors is not defined here")
+        else:
+            print("Values must be Vectors or floats")
+        
+    def __rtruediv__(self, other):
+        print("NotImplementedError: Division of sclara by a Vectors is not defined here")
