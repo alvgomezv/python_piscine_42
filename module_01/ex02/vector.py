@@ -6,7 +6,7 @@
 #    By: alvgomez <alvgomez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 18:12:02 by alvgomez          #+#    #+#              #
-#    Updated: 2023/03/22 13:42:54 by alvgomez         ###   ########.fr        #
+#    Updated: 2023/03/24 12:06:47 by alvgomez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,22 @@ class Vector:
                 a = len(values)
                 b = 1  
             self.shape = (a,b)
+        elif isinstance(values, int):
+            vector = []
+            for i in range(values):
+                temp = [float(i)]
+                vector.append(temp)
+            self.values = vector
+            self.shape = (len(vector[0]),1)
+        elif isinstance(values, tuple):
+            vector = []
+            for i in range(values[1] - values[0]):
+                temp = [float(values[0] + i)]
+                vector.append(temp)
+            self.values = vector
+            self.shape = (len(vector[0]),1)
         else:
-            print("Vectors must be lists of floats")
+            print("Vectors must be lists of floats or tuples")
 
     def dot(self, v2):
         if self.shape == v2.shape:
