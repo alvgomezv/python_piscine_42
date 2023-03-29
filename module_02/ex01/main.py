@@ -1,0 +1,69 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    main.py                                            :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: alvgomez <alvgomez@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/03/29 13:05:03 by alvgomez          #+#    #+#              #
+#    Updated: 2023/03/29 15:32:38 by alvgomez         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+def what_are_the_vars(*args, **kwargs):
+    obj = ObjectC()
+    i = 0
+    for arg in args:
+        setattr(obj, f"var_{i}", arg)
+        i += 1
+    for key, value in kwargs.items():
+        for attr in dir(obj):
+            if attr[0] != '_':
+                if key == attr: 
+                    return    
+        setattr(obj, key, value)
+    return obj
+
+
+class ObjectC(object):
+    def __init__(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+        
+def doom_printer(obj): 
+    if obj is None:
+        print("ERROR")
+        print("end")
+        return
+    for attr in dir(obj):
+        if attr[0] != '_':
+            value = getattr(obj, attr) 
+            print("{}: {}".format(attr, value))
+    print("end")
+
+if __name__ == "__main__":
+    obj = what_are_the_vars(7)
+    doom_printer(obj)
+    print("-----")
+    obj = what_are_the_vars(None, []) 
+    doom_printer(obj)
+    print("-----")
+    obj = what_are_the_vars("ft_lol", "Hi") 
+    doom_printer(obj)
+    print("-----")
+    obj = what_are_the_vars()
+    doom_printer(obj)
+    print("-----")
+    obj = what_are_the_vars(12, "Yes", [0, 0, 0], a=10, hello="world") 
+    doom_printer(obj)
+    print("-----")
+    obj = what_are_the_vars(42, a=10, var_0="world")
+    doom_printer(obj)
+    print("-----")
+    obj = what_are_the_vars(42, "Yes", a=10, var_2="world") 
+    doom_printer(obj)
+    print("-----")
+    pu = ObjectC(hola="pepa")
+    doom_printer(pu)
+    
