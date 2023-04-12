@@ -6,7 +6,7 @@
 #    By: alvgomez <alvgomez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 10:08:20 by alvgomez          #+#    #+#              #
-#    Updated: 2023/03/20 11:14:22 by alvgomez         ###   ########.fr        #
+#    Updated: 2023/04/12 18:42:55 by alvgomez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,10 @@ def convert_to_morse(list):
 	morse = []
 	for word in list:
 		new_word = word
+		for char in new_word:
+			if char not in code:
+				print("ERROR")
+				exit()
 		new_word = " ".join(new_word)
 		for key in code:
 			new_word = new_word.replace(key, code[key])
