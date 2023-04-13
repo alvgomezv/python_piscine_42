@@ -6,7 +6,7 @@
 #    By: alvgomez <alvgomez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 18:12:02 by alvgomez          #+#    #+#              #
-#    Updated: 2023/03/24 12:06:47 by alvgomez         ###   ########.fr        #
+#    Updated: 2023/04/13 16:08:58 by alvgomez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ class Vector:
             self.values = vector
             self.shape = (len(vector[0]),1)
         else:
-            print("Vectors must be lists of floats or tuples")
+            raise NotImplementedError("Vectors must be lists of floats or tuples")
 
     def dot(self, v2):
         if self.shape == v2.shape:
@@ -49,7 +49,7 @@ class Vector:
                   sum = sum + (a[0] * b[0])
             return sum
         else:
-            print("Vectors must have the same shape")
+            raise NotImplementedError("Vectors must have the same shape")
 
     def T(self):
         vect = []
@@ -100,9 +100,9 @@ class Vector:
                       vector.append(temp)
                 return Vector(vector)
             else:
-                print("Vectors must have the same shape")
+                raise NotImplementedError("Vectors must have the same shape")
         else:
-            print("Values must be Vectors or floats")
+            raise NotImplementedError("Values must be Vectors or floats")
 
     def __radd__(self, other):
         return (self + other)
@@ -136,12 +136,12 @@ class Vector:
                       vector.append(temp)
                 return Vector(vector)
             else:
-                print("Vectors must have the same shape")
+                raise NotImplementedError("Vectors must have the same shape")
         else:
-            print("Values must be Vectors or floats")
+            raise NotImplementedError("Values must be Vectors or floats")
 
     def __rsub__(self, other):
-        print("NotImplementedError: Subtraction of a scalar by a Vector is not defined here")
+        raise NotImplementedError("Subtraction of a scalar by a Vector is not defined here")
 
     def __mul__(self, other):
         if isinstance(other, float):
@@ -153,9 +153,9 @@ class Vector:
                     self.values[i][0] *= other
             return self
         elif isinstance(other, Vector):
-            print("NotImplementedError: Multiplication of Vectors is not defined here")
+            raise NotImplementedError("Multiplication of Vectors is not defined here")
         else:
-            print("Values must be Vectors or floats")
+            raise NotImplementedError("Values must be Vectors or floats")
         
     def __rmul__(self, other):
         return (self * other)
@@ -170,9 +170,9 @@ class Vector:
                     self.values[i][0] /= other
             return self
         elif isinstance(other, Vector):
-            print("NotImplementedError: Division of Vectors is not defined here")
+            raise NotImplementedError("Division of Vectors is not defined here")
         else:
             print("Values must be Vectors or floats")
         
     def __rtruediv__(self, other):
-        print("NotImplementedError: Division of sclara by a Vectors is not defined here")
+        raise NotImplementedError("Division of sclara by a Vectors is not defined here")

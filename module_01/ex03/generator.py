@@ -6,7 +6,7 @@
 #    By: alvgomez <alvgomez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 12:29:48 by alvgomez          #+#    #+#              #
-#    Updated: 2023/03/28 13:21:52 by alvgomez         ###   ########.fr        #
+#    Updated: 2023/04/13 16:22:26 by alvgomez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,9 @@ def generator(text, sep=" ", option=None):
          return list
     else:
         print("ERROR")
+        exit()
 
-if __name__ == "__main__":
-    text = "Le Lorem Ipsum est simplement du faux texte."
-    for word in generator(text, sep=" ", option="shuffle"):
-        print(word)
+#if __name__ == "__main__":
+#    text = "Le Lorem Ipsum est simplement du faux texte."
+#    for word in generator(text, sep=" ", option="shuffle"):
+#        print(word)

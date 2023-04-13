@@ -6,7 +6,7 @@
 #    By: alvgomez <alvgomez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/17 11:56:01 by alvgomez          #+#    #+#              #
-#    Updated: 2023/03/17 12:41:52 by alvgomez         ###   ########.fr        #
+#    Updated: 2023/04/13 15:26:40 by alvgomez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,8 @@ def create_list(s, numb):
 	for item in words:
 		if len(item) <= numb:
 			delete.append(item)
-	for item in delete:
-		words.remove(item)
-	print(words)
+	new = [x for x in words if x not in delete]
+	print(new)
 
 if __name__ == "__main__":
 	n = len(sys.argv)

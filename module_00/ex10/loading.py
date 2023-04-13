@@ -6,7 +6,7 @@
 #    By: alvgomez <alvgomez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 12:39:07 by alvgomez          #+#    #+#              #
-#    Updated: 2023/04/12 18:50:40 by alvgomez         ###   ########.fr        #
+#    Updated: 2023/04/13 13:25:09 by alvgomez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,16 @@ bar = {
 	21 : "[====================]",
 }
 
-def ft_progress(listy):
+def change_numb(listy):
 	numbers = list(listy)
+	n = len(numbers)
+	new = []
+	for i in range(n):
+		new.append(i)
+	return new
+
+def ft_progress(listy):
+	numbers = change_numb(listy)
 	n = len(numbers)
 	t_start = time.time()
 	eta = 0
@@ -54,7 +62,7 @@ def ft_progress(listy):
 	print (f"ETA:  0.00s [100%] {bar[21]} {numbers[i - 1] + 1}/{n} | elapsed time {time.time() - t_start:5.2f}s", end= "\r")
 
 if __name__ == "__main__":
-	listy = range(500)
+	listy = range(0, 100, 3)
 	ret = 0
 	for elem in ft_progress(listy): 
 		ret += (elem + 3) % 5

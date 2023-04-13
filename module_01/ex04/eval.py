@@ -6,11 +6,11 @@
 #    By: alvgomez <alvgomez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/28 13:23:00 by alvgomez          #+#    #+#              #
-#    Updated: 2023/03/28 13:45:09 by alvgomez         ###   ########.fr        #
+#    Updated: 2023/04/13 16:27:16 by alvgomez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-class evaluator:
+class valuator:
     def zip_evaluate(coefs, words):
         if isinstance(coefs, list) and isinstance(words, list) and len(coefs) == len(words):
             result = 0
@@ -30,8 +30,10 @@ class evaluator:
         else:
             return -1
 
-if __name__ == "__main__":
-    words = ["Le", "Lorem", "Ipsum", "est", "simple"]
-    coefs = [1.0, 2.0, 1.0, 4.0, 0.5]
-    print(evaluator.zip_evaluate(coefs, words))
-    print(evaluator.enumerate_evaluate(coefs, words))
+#if __name__ == "__main__":
+#    words = ["Le", "Lorem", "Ipsum", "est", "simple"]
+#    coefs = [1.0, 2.0, 1.0, 4.0, 0.5]
+#    print(evaluator.zip_evaluate(coefs, words))
+#    words = ["Le", "Lorem", "Ipsum", "n’", "est", "pas", "simple"]
+#    coefs = [0.0, -1.0, 1.0, -12.0, 0.0, 42.42]
+#    print(evaluator.enumerate_evaluate(coefs, words))

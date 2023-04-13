@@ -2,4 +2,4 @@ conda list
 conda search numpy
 conda remove numpy
 conda install numpy
-conda list --explicit > requirements.txt
+conda list --export > requirements.txt
