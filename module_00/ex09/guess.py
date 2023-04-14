@@ -6,7 +6,7 @@
 #    By: alvgomez <alvgomez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 11:13:06 by alvgomez          #+#    #+#              #
-#    Updated: 2023/04/13 12:58:09 by alvgomez         ###   ########.fr        #
+#    Updated: 2023/04/14 11:31:25 by alvgomez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,8 +71,10 @@ Good luck!
             exit()
         elif check(guess) == 2:
             print("That's not an integer")
+            tries += 1
         elif check(guess) == 3:
             print("Number out of range")
+            tries += 1
         else:
             guess = int(guess)
             where_the_number(numb, guess)

@@ -6,7 +6,7 @@
 #    By: alvgomez <alvgomez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 15:50:54 by alvgomez          #+#    #+#              #
-#    Updated: 2023/03/16 17:40:10 by alvgomez         ###   ########.fr        #
+#    Updated: 2023/04/14 10:50:21 by alvgomez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ def text_analyzer(s=""):
 	'''
 	This function counts the number of upper characters, lower characters, 
 	punctuation and spaces in a given text.'''
-	if not s:
+	while not s:
 		print("What is the text to analyze?")
 		s = input()
 		assert s.isdigit() == False, "argument is not a string"
