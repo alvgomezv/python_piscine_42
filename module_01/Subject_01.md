@@ -28,6 +28,7 @@
 - A test.py file will be provided to validate the functionality of your Vector class.
 
 **Files to turn in:** `vector.py`, `test.py`
+**Forbidden functions:** Numpy library
 
 ## Exercise 03:
 **Description:**
