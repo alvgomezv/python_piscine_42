@@ -71,6 +71,7 @@
 - If the number of arguments is different from 2 or if the type of any argument is wrong, the program prints an error message.
 
 **Files to turn in:** `filterwords.py`
+**Forbidden functions:** `filter`
 
 ## Exercise 08
 **Description:** Morse Code Encoder.
@@ -101,3 +102,4 @@
 - The program demonstrates the usage of the `ft_progress` function with examples.
 
 **Files to turn in:** `loading.py`
+**Forbidden functions:** tqdm or any library for automatic loading bar
